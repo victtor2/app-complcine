@@ -8,10 +8,15 @@
       <h2>⭐ Películas Top del Día</h2>
   
       <div class="peliculas-grid">
-        <div class="pelicula-card" *ngFor="let pelicula of peliculas">
-          <img [src]="pelicula.imagen" alt="{{ pelicula.titulo }}" />
-          <h3>{{ pelicula.titulo }}</h3>
-        </div>
+        @for (pelicula of peliculasTop; track pelicula.id) {
+          <div class="pelicula-card">
+            <img [src]="pelicula.image" alt="{{ pelicula.title }}" />
+            <h3>{{ pelicula.title }}</h3>
+            <p>⭐ {{ pelicula.puntuacion }}</p>
+            <p>{{ pelicula.description }}</p>
+            <p><strong>Precio:</strong> ${{ pelicula.precio }}</p>
+          </div>
+        }
       </div>
     </section>
   </div>

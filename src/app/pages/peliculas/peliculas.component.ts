@@ -16,10 +16,14 @@ export class PeliculasComponent {
 
   peliculas: Pelicula[] = [];
 
-  constructor(private router: Router, private peliculasService: PeliculasService){}
+  constructor(
+      private router: Router,
+      private peliculasService: PeliculasService
+    ){}
 
   ngOnInit(){
     this.getPeliculas();
+    //this.peliculasService.loadPeliculasToFirebase();
   }
   
   goToPelicula(id: number){
