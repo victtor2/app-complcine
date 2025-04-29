@@ -1,0 +1,21 @@
+<div class="container-fluid text-center">
+    <h1>Peliculas</h1>
+    <div class="d-flex justify-content-center align-content-center flex-wrap gap-3">
+        @for (pelicula of peliculas; track $index) {
+            <div class="card" style="width: 18rem;" (click)="goToPelicula(pelicula.id)">
+                <img 
+                    [src]="pelicula.posterURL" 
+                    class="card-img-top p-3"
+                    style="height: 200px; width: fit-content; max-width: 100%; margin-inline: auto;"
+                    [alt]="pelicula.title"
+                >
+                <div class="card-body">
+                  <h5 class="card-title">{{pelicula.title}}</h5>
+                  <h5 class="card-title">$ {{pelicula.imdbId}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+                </div>
+            </div> 
+        }
+    </div>   
+</div>

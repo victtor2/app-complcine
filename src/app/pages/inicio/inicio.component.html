@@ -1,0 +1,17 @@
+<div class="inicio-container">
+    <section class="bienvenida">
+      <h1>🎬 ¡Bienvenido a CineApp!</h1>
+      <p>Disfruta de las mejores películas del día.</p>
+    </section>
+  
+    <section class="peliculas-top">
+      <h2>⭐ Películas Top del Día</h2>
+  
+      <div class="peliculas-grid">
+        <div class="pelicula-card" *ngFor="let pelicula of peliculas">
+          <img [src]="pelicula.imagen" alt="{{ pelicula.titulo }}" />
+          <h3>{{ pelicula.titulo }}</h3>
+        </div>
+      </div>
+    </section>
+  </div>
