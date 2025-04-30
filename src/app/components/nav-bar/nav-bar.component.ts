@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,4 +11,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavBarComponent {
 
+  constructor(private authService : AuthService){}
+
+  logout(){
+    this.authService.logout()
+    .then(()=> console.log("Logout exitoso"))
+    .catch(err => console.log(err));
+  }
 }

@@ -15,6 +15,19 @@
             <p>⭐ {{ pelicula.puntuacion }}</p>
             <p>{{ pelicula.description }}</p>
             <p><strong>Precio:</strong> ${{ pelicula.precio }}</p>
+
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              @for (horario of pelicula.horarios; track horario) {
+                <button
+                  class="btn btn-outline-primary"
+                  [routerLink]="['/tickets']"
+                  [queryParams]="{ id: pelicula.id, horario: horario }"
+                >
+                  {{ horario }}
+                </button>
+              }
+            </div>
+
           </div>
         }
       </div>
